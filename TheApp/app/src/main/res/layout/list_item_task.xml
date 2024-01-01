@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="task"
+            type="com.assignment.theapp.model.Task" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/taskTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{task.task}"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{task.title}" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{task.description}" />
+
+        <View
+            android:id="@+id/colorView"
+            android:layout_width="40dp"
+            android:layout_height="8dp"
+            android:background="@{android.text.TextUtils.isEmpty(task.colorCode) ? android.graphics.Color.TRANSPARENT : android.graphics.Color.parseColor(task.colorCode)}"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</layout>
